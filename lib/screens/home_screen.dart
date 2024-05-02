@@ -62,6 +62,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       height: 50,
                     ),
                     TopHeading(),
+                    SizedBox(
+                      height: 20,
+                    ),
                     MiddleSection()
                   ],
                 ),
