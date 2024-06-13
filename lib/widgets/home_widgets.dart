@@ -126,54 +126,59 @@ class _MiddleSectionState extends State<MiddleSection> {
   @override
   Widget build(BuildContext context) {
     return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            InkWell(
-              onTap: () {},
-              child: const RotatedBox(
-                quarterTurns: 3,
-                child: Text("Internal Storage",
-                    style: TextStyle(
-                        fontSize: 24,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold)),
-              ),
-            ),
-            const SizedBox(
-              height: 8,
-            ),
-            Row(
-              children: [
-                Container(
-                  color: Colors.white,
-                  width: 45,
-                  height: 4,
+        Padding(
+          padding: const EdgeInsets.only(top: 8.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              InkWell(
+                onTap: () {},
+                child: const RotatedBox(
+                  quarterTurns: 3,
+                  child: Text("Internal Storage",
+                      style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold)),
                 ),
-                Container(
-                  color: Colors.white,
-                  width: 8,
-                  height: 8,
-                )
-              ],
-            ),
-            const SizedBox(
-              height: 8,
-            ),
-            InkWell(
-              onTap: () {},
-              child: const RotatedBox(
-                quarterTurns: 3,
-                child: Text("External Storage",
-                    style: TextStyle(
-                        fontSize: 24,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold)),
               ),
-            )
-          ],
+              const SizedBox(
+                height: 8,
+              ),
+              Row(
+                children: [
+                  Container(
+                    color: Colors.white,
+                    width: 45,
+                    height: 4,
+                  ),
+                  Container(
+                    color: Colors.white,
+                    width: 8,
+                    height: 8,
+                  )
+                ],
+              ),
+              const SizedBox(
+                height: 8,
+              ),
+              InkWell(
+                onTap: () {},
+                child: const RotatedBox(
+                  quarterTurns: 3,
+                  child: Text("External Storage",
+                      style: TextStyle(
+                          fontSize: 20,
+                          color:
+                              Color.fromRGBO(255, 208, 50, 1), // Colors.white,
+                          fontWeight: FontWeight.bold)),
+                ),
+              )
+            ],
+          ),
         ),
         const Spacer(),
         SizedBox(
@@ -295,7 +300,9 @@ class _MiddleSectionState extends State<MiddleSection> {
                         ],
                       ),
                     ),
+                    const Spacer(),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Row(
                           children: [
@@ -307,10 +314,20 @@ class _MiddleSectionState extends State<MiddleSection> {
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(50))),
                             ),
-                            Text("Used")
+                            const SizedBox(
+                              width: 4,
+                            ),
+                            const Text(
+                              "Used",
+                              style: TextStyle(color: Colors.white),
+                            )
                           ],
                         ),
+                        const SizedBox(
+                          width: 4,
+                        ),
                         Row(
+                          // mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             Container(
                               width: 10,
@@ -320,11 +337,39 @@ class _MiddleSectionState extends State<MiddleSection> {
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(50))),
                             ),
-                            Text("Free")
+                            const SizedBox(
+                              width: 4,
+                            ),
+                            const Text(
+                              "Free",
+                              style: TextStyle(color: Colors.white),
+                            )
                           ],
                         )
                       ],
-                    )
+                    ),
+                    const SizedBox(
+                      height: 12,
+                    ),
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: AppColors.backgroundColor,
+                        shape: const RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(50)),
+                          side: BorderSide(
+                              width: 5,
+                              color: Color.fromARGB(255, 252, 133, 147)),
+                        ),
+                      ),
+                      onPressed: () {},
+                      child: const Text(
+                        'Storage',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 24,
+                    ),
                   ],
                 ),
               ),

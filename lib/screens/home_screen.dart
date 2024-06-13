@@ -13,6 +13,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  int _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     var deviceheight = MediaQuery.of(context).size.height;
@@ -73,6 +74,30 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
+      bottomNavigationBar: BottomNavigationBar(
+          backgroundColor: Colors.white,
+          selectedItemColor: AppColors.backgroundColor,
+          elevation: 0,
+          currentIndex: _currentIndex,
+          onTap: (val) {
+            setState(() {
+              _currentIndex = val;
+            });
+          },
+          items: const [
+            BottomNavigationBarItem(
+              label: "",
+              icon: Icon(Icons.explore),
+            ),
+            BottomNavigationBarItem(
+              label: "",
+              icon: Icon(Icons.file_copy),
+            ),
+            BottomNavigationBarItem(
+              label: "",
+              icon: Icon(Icons.settings),
+            )
+          ]),
     );
   }
 }
